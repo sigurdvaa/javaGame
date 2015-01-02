@@ -43,18 +43,19 @@ var mouseX,
     clock,
     timePassed = 0,
     enemies = [], //Array holding all the bats
-    score = 0,
+    score = undefined,
     batsKilled = 0,
     lastTime = new Date(),
     gunShotX,
     gunShotY,
     isSoundOn = true,
-    isPlaying = true;
+    isPlaying = false;
     
 
 //settings vars
 var HEIGHT = 600,
-    WIDTH = 960;
+    WIDTH = 960,
+    MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
 /*
  *	VARS END
@@ -119,17 +120,18 @@ function loadAssets() {
     crosshair.src = 'assets/media/crosshair.png';
     
     backgroundSound = new Audio();
-    backgroundSound.loop = true;
     backgroundSound.onloadeddata = function() {
         assetLoaded();
     };
     backgroundSound.src = 'assets/media/countryside.wav';
+    backgroundSound.load();
     
     gunShotSound = new Audio();
     gunShotSound.onloadeddata = function() {
         assetLoaded();
     };
     gunShotSound.src = 'assets/media/shot.wav';
+    gunShotSound.load();
 }
 
 function assetLoaded(){
@@ -138,7 +140,11 @@ function assetLoaded(){
     if (numAssetsLoaded == assetsToLoad) {
 	
 	clearInterval(loading);
-	//backgroundSound.play();
+	
+	if(MOBILE) {
+	    isSoundOn = false;
+	};
+	backgroundSound.play();
 	main();
     
     };
@@ -156,9 +162,13 @@ function setupGame() {
     ctx = c.getContext("2d");
     
     c.onselectstart = function () { return false; }
-    c.addEventListener("mousemove", updateMousePos, false);
-    c.addEventListener("mousedown", fireGun, false);
-    c.addEventListener("touchstart", fireGunTouch, false);
+    
+    if(MOBILE) {
+	c.addEventListener("touchstart", fireGunTouch, false);
+    }else{
+	c.addEventListener("mousedown", fireGun, false);
+	c.addEventListener("mousemove", updateMousePos, false);
+    };
     
     loadAssets();
 }
@@ -170,6 +180,13 @@ function main() {
     if (isPlaying) {
 	update(dt);
 	drawSet();    
+    }else{
+	updatePause();
+	drawPause();
+    };
+    
+    if (backgroundSound.currentTime > 10) {
+	backgroundSound.currentTime = 1;
     };
     
     lastTime = now;
@@ -189,10 +206,6 @@ function update(dt) {
     updateEntities(dt);
     
     checkCollisions();
-    
-    if (backgroundSound.currentTime > 11) {
-	backgroundSound.currentTime = 1;
-    };
   
 }
 
@@ -202,6 +215,7 @@ function drawSet() {
     ctx.drawImage(backgroundImg, 0, 0, 960, 600);
     // draws score and time
     ctx.font="20px Arial";
+    ctx.textAlign = "left";
     ctx.fillStyle = "white";
     ctx.fillText("Time: " + parseInt(timePassed), 870, 25);
     ctx.fillText("Score: " + score, 10, 50);
@@ -210,6 +224,83 @@ function drawSet() {
     for (var i=0;i<enemies.length;i++){
 	enemies[i].render();
     };
+    // draws crosshair
+    ctx.drawImage(crosshair, 0,0, crosshair.width, crosshair.height, mouseX-37, mouseY-37, 74, 74);
+}
+
+function updatePause() {
+    
+    if (gunShotX!=undefined) {
+	if (gunShotX > 410 && gunShotX < 410+145) {
+	    if (gunShotY > 235 && gunShotY < 235+48) {
+		isPlaying = true;
+		resetGame();
+	    }else if (gunShotY > 325 && gunShotY < 325+32) {
+		if (!MOBILE) {
+		    if (isSoundOn) {
+			isSoundOn = false;
+			backgroundSound.currentTime = 1;
+			backgroundSound.pause();
+		    }else{
+			isSoundOn = true;
+			backgroundSound.play();
+		    };
+		};
+	    };
+	};
+	
+	gunShotX = undefined;
+	gunShotY = undefined;
+    };
+    
+}
+
+function resetGame() {
+    score = 0;
+    timePassed = 0;
+    enemies = [];
+    batsKilled = 0;
+    batSpeed = [100, 50];
+}
+
+function drawPause() {
+
+    // draws background
+    ctx.drawImage(backgroundImg, 0, 0, 960, 600);
+    // draws score and time
+    ctx.font="45px Arial";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "white";
+    
+    if (score > 0) {
+	ctx.fillText("Your score: "+score, 480, 150);
+    }else if (score == undefined) {
+	ctx.fillText("A bat game", 480, 150);
+    }else{
+	ctx.fillText("GAME OVER", 480, 150);
+    };
+    
+    ctx.beginPath();
+    ctx.strokeStyle="white";
+    ctx.rect(410, 235, 145, 48);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.strokeStyle="white";
+    ctx.rect(410, 325, 145, 32);
+    ctx.stroke();
+    
+    ctx.fillText("Start", 480, 275);
+    ctx.font="25px Arial";
+    if (isSoundOn) {
+	ctx.fillText("Sound ON", 480, 350);
+    }else{
+	ctx.fillStyle = "red";
+	ctx.fillText("Sound OFF", 480, 350);
+    }
+    // draw bats
+    ctx.drawImage(batSpritesheet, 0,0, batSize[0], batSize[1], 150, 150, batRenderSize[0], batRenderSize[1]);
+    ctx.drawImage(batSpritesheet, 0,0, batSize[0], batSize[1], 750, 300, batRenderSize[0], batRenderSize[1]);
     // draws crosshair
     ctx.drawImage(crosshair, 0,0, crosshair.width, crosshair.height, mouseX-37, mouseY-37, 74, 74);
 }
@@ -245,12 +336,23 @@ function fireGun() {
     };
 }
 
-function fireGunTouch(event) {
+function fireGunTouch (event) {
     var rect = c.getBoundingClientRect();
-    gunShotX = event.clientX - rect.left -0.5;
-    gunShotY = event.clientY - rect.top;
-    
-    if (isSoundOn) {
+    gunShotX = event.changedTouches[0].pageX - rect.left;
+    gunShotY = event.changedTouches[0].pageY - rect.top;
+    mouseX = gunShotX;
+    mouseY = gunShotY;
+    if (!isPlaying && gunShotY > 325 && gunShotY < 325+32) {
+	if (isSoundOn) {
+	    isSoundOn = false;
+	    backgroundSound.currentTime = 1;
+	    backgroundSound.pause();
+	}else{
+	    isSoundOn = true;
+	    backgroundSound.play();
+	};
+    };
+    if (isSoundOn && isPlaying) {
 	gunShotSound.currentTime = 0;
 	gunShotSound.play();
     };
@@ -285,11 +387,15 @@ function checkCollisions() {
 	    };
 	    
 	};
-    
+	
+        gunShotX = undefined;
+	gunShotY = undefined; 
     };
     
-    gunShotX = undefined;
-    gunShotY = undefined; 
+    if (timePassed > 60 || score < 0) {
+	isPlaying = false;
+    };
+
 }
 
 function Sprite(img, pos, size, speed, frames, once, renderSize) {
