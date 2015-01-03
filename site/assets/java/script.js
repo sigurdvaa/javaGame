@@ -170,6 +170,8 @@ function setupGame() {
 	c.addEventListener("mousemove", updateMousePos, false);
     };
     
+    $('#btnstopgame').hide();
+    
     loadAssets();
 }
 
@@ -190,6 +192,7 @@ function main() {
     };
     
     lastTime = now;
+    console.log(dt);
     requestAnimationFrame(main);
 }
 
@@ -261,6 +264,12 @@ function resetGame() {
     enemies = [];
     batsKilled = 0;
     batSpeed = [100, 50];
+    $('#btnstopgame').show();
+}
+
+function btnStopGame() {
+    isPlaying = false;
+    $('#btnstopgame').hide();
 }
 
 function drawPause() {
@@ -330,7 +339,7 @@ function fireGun() {
     gunShotX = mouseX;
     gunShotY = mouseY;
     
-    if (isSoundOn) {
+    if (isSoundOn && isPlaying) {
 	gunShotSound.currentTime = 0;
 	gunShotSound.play();
     };
@@ -381,9 +390,9 @@ function checkCollisions() {
 		batSpeed[0] *= 1.06;
 		batSpeed[1] *= 1.05;
 	    }else{
-		score -= 10;
-		batSpeed[0] *= 1.06;
-		batSpeed[1] *= 1.05;
+		score -= 33;
+		batSpeed[0] *= 1.05;
+		batSpeed[1] *= 1.04;
 	    };
 	    
 	};
@@ -394,6 +403,7 @@ function checkCollisions() {
     
     if (timePassed > 60 || score < 0) {
 	isPlaying = false;
+	$('#btnstopgame').hide();
     };
 
 }
@@ -435,29 +445,37 @@ function Sprite(img, pos, size, speed, frames, once, renderSize) {
 	    this.speed[1] *= -1;
 	};
 	
-	if (this.speed[0] > 0) {
-	    if (this.pos[0] + (this.speed[0]*dt) < (960-this.renderSize[0])) {
-		this.pos[0] += this.speed[0]*dt;
+	var speed0 = this.speed[0],
+	    speed1 = this.speed[1],
+	    pos0 = this.pos[0],
+	    pos1 = this.pos[1],
+	    speed0dt = speed0*dt,
+	    speed1dt = speed1*dt;
+	
+	
+	if (speed0 > 0) {
+	    if (pos0 + (speed0dt) < (960-this.renderSize[0])) {
+		this.pos[0] += speed0dt;
 	    }else{
 		this.speed[0] *= -1;
 	    };
 	}else{
-	    if (this.pos[0] + (this.speed[0]*dt) > 0) {
-		this.pos[0] += this.speed[0]*dt;
+	    if (pos0 + (speed0dt) > 0) {
+		this.pos[0] += speed0dt;
 	    }else{
 		this.speed[0] *= -1;
 	    };
 	};
 	
-	if (this.speed[1] > 0) {
-	    if (this.pos[1] + (this.speed[1]*dt) < (600-this.renderSize[1])) {
-		this.pos[1] += this.speed[1]*dt;
+	if (speed1 > 0) {
+	    if (pos1 + (speed1dt) < (600-this.renderSize[1])) {
+		this.pos[1] += speed1dt;
 	    }else{
 		this.speed[1] *= -1;
 	    };
 	}else{
-	    if (this.pos[1] + (this.speed[1]*dt) > 0) {
-		this.pos[1] += this.speed[1]*dt;
+	    if (pos1 + (speed1dt) > 0) {
+		this.pos[1] += speed1dt;
 	    }else{
 		this.speed[1] *= -1;
 	    };

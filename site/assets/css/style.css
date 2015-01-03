@@ -4,7 +4,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 9, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 9, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -16,7 +16,7 @@ html {
 /**
  * Remove default margin.
  */
-/* line 19, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 19, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 body {
   margin: 0; }
 
@@ -28,7 +28,7 @@ body {
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-/* line 45, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 45, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
@@ -36,7 +36,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-/* line 57, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 57, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 audio, canvas, progress, video {
   display: inline-block;
   /* 1 */
@@ -47,7 +47,7 @@ audio, canvas, progress, video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 67, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 67, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 audio:not([controls]) {
   display: none;
   height: 0; }
@@ -56,7 +56,7 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-/* line 78, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 78, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 [hidden], template {
   display: none; }
 
@@ -65,14 +65,14 @@ audio:not([controls]) {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-/* line 89, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 89, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 a {
   background-color: transparent; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-/* line 98, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 98, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 a:active, a:hover {
   outline: 0; }
 
@@ -81,21 +81,21 @@ a:active, a:hover {
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
-/* line 109, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 109, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 abbr[title] {
   border-bottom: 1px dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-/* line 118, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 118, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 b, strong {
   font-weight: bold; }
 
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 126, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 126, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 dfn {
   font-style: italic; }
 
@@ -103,7 +103,7 @@ dfn {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-/* line 135, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 135, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -111,7 +111,7 @@ h1 {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 144, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 144, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 mark {
   background: #ff0;
   color: #000; }
@@ -119,25 +119,25 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 153, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 153, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 small {
   font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 162, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 162, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
-/* line 169, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 169, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 sup {
   top: -0.5em; }
 
-/* line 173, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 173, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 sub {
   bottom: -0.25em; }
 
@@ -146,14 +146,14 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
-/* line 184, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 184, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 img {
   border: 0; }
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
-/* line 192, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 192, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -162,14 +162,14 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari.
  */
-/* line 203, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 203, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 figure {
   margin: 1em 40px; }
 
 /**
  * Address differences between Firefox and other browsers.
  */
-/* line 211, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 211, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 hr {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
@@ -179,14 +179,14 @@ hr {
 /**
  * Contain overflow in all browsers.
  */
-/* line 221, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 221, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 pre {
   overflow: auto; }
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-/* line 232, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 232, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 code, kbd, pre, samp {
   font-family: monospace, monospace;
   font-size: 1em; }
@@ -203,7 +203,7 @@ code, kbd, pre, samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-/* line 256, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 256, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 button, input, optgroup, select, textarea {
   color: inherit;
   /* 1 */
@@ -215,7 +215,7 @@ button, input, optgroup, select, textarea {
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-/* line 266, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 266, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 button {
   overflow: visible; }
 
@@ -225,7 +225,7 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-/* line 278, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 278, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 button, select {
   text-transform: none; }
 
@@ -236,7 +236,7 @@ button, select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 293, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 293, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -246,14 +246,14 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 303, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 303, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 button[disabled], html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 312, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 312, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -262,7 +262,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 322, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 322, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 input {
   line-height: normal; }
 
@@ -273,7 +273,7 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 335, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 335, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 input[type="checkbox"], input[type="radio"] {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -287,7 +287,7 @@ input[type="checkbox"], input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 347, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 347, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
@@ -296,7 +296,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 357, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 357, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -310,14 +310,14 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 371, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 371, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 379, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 379, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -327,7 +327,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 390, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 390, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 legend {
   border: 0;
   /* 1 */
@@ -337,7 +337,7 @@ legend {
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-/* line 399, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 399, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 textarea {
   overflow: auto; }
 
@@ -345,7 +345,7 @@ textarea {
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 408, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 408, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 optgroup {
   font-weight: bold; }
 
@@ -354,16 +354,16 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
-/* line 419, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 419, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 425, D:/My Documents/GitHub/javaGame/assets/SASS/normalize */
+/* line 425, E:/My Documents/GitHub/javaGame/assets/SASS/normalize */
 td, th {
   padding: 0; }
 
-/* line 4, D:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+/* line 4, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
 body {
   font-family: Arial, sans-serif;
   font-size: 100%;
@@ -371,12 +371,13 @@ body {
   color: #eee;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  text-align: center; }
-  /* line 14, D:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+  text-align: center;
+  margin-bottom: 20px; }
+  /* line 15, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
   body h1 {
-    margin: 60px auto;
+    margin: 50px auto 40px auto;
     width: 960px; }
-  /* line 18, D:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+  /* line 19, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
   body #gamecanvas {
     -webkit-box-shadow: 1px 1px 20px grey;
             box-shadow: 1px 1px 20px grey;
@@ -385,8 +386,32 @@ body {
     height: 600px;
     width: 960px;
     cursor: none; }
+  /* line 26, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+  body #btnstopgame {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: 50px;
+    background-color: #555;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    border: none;
+    color: #aaa; }
+    /* line 36, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+    body #btnstopgame:hover {
+      background-color: #777;
+      color: #eee;
+      -webkit-box-shadow: 1px 1px 6px black;
+              box-shadow: 1px 1px 6px black; }
+    /* line 41, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+    body #btnstopgame:active {
+      -webkit-box-shadow: none;
+              box-shadow: none; }
+    /* line 44, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+    body #btnstopgame:focus {
+      outline: 0; }
 
-/* line 25, D:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+/* line 47, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
 img {
   max-width: 100%;
   image-rendering: optimizeSpeed;

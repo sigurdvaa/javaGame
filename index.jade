@@ -10,7 +10,9 @@ html(lang="no")
         
     body       
         h1 A Simple Java Game
-
+        p Hit: +100 | Miss: -33 | Score below 0: Game over | One game last 60 sec.
         canvas#gamecanvas
+        
+        button#btnstopgame(onclick="btnStopGame()") End game
         
         script(src="assets/java/script.js", type="text/javascript")
