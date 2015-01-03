@@ -124,7 +124,7 @@ function loadAssets() {
     crosshair.src = 'assets/media/crosshair.png';
     
     backgroundSound = new Audio();
-    backgroundSound.volume = 0.5;
+    backgroundSound.volume = 0.4;
     backgroundSound.onloadeddata = function() {
         assetLoaded();
     };
@@ -212,7 +212,6 @@ function main() {
     };
     
     lastTime = now;
-    console.log(dt);
     requestAnimationFrame(main);
 }
 

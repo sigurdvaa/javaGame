@@ -371,15 +371,15 @@ body {
   color: #eee;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  text-align: center;
-  margin-bottom: 20px; }
-  /* line 15, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+  text-align: center; }
+  /* line 14, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
   body h1 {
     margin: 50px auto 30px auto;
     width: 960px; }
-  /* line 19, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+  /* line 18, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
   body #gamecanvas {
     margin-top: 10px;
+    margin-bottom: 70px;
     -webkit-box-shadow: 1px 1px 20px grey;
             box-shadow: 1px 1px 20px grey;
     -webkit-border-radius: 5px;
@@ -390,7 +390,8 @@ body {
   /* line 27, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
   body #btnstopgame {
     display: block;
-    margin: 20px auto;
+    margin: 0 auto;
+    margin-top: -60px;
     width: 150px;
     height: 50px;
     background-color: #555;
@@ -398,21 +399,21 @@ body {
             border-radius: 5px;
     border: none;
     color: #aaa; }
-    /* line 37, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+    /* line 38, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
     body #btnstopgame:hover {
       background-color: #777;
       color: #eee;
       -webkit-box-shadow: 1px 1px 6px black;
               box-shadow: 1px 1px 6px black; }
-    /* line 42, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+    /* line 43, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
     body #btnstopgame:active {
       -webkit-box-shadow: none;
               box-shadow: none; }
-    /* line 45, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+    /* line 46, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
     body #btnstopgame:focus {
       outline: 0; }
 
-/* line 48, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
+/* line 49, E:/My Documents/GitHub/javaGame/assets/SASS/style.sass */
 img {
   max-width: 100%;
   image-rendering: optimizeSpeed;
