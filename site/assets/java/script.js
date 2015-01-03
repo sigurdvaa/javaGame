@@ -23,13 +23,17 @@ var c,
 // Loading vars
 var loading,
     loadingTimer = 1,
-    assetsToLoad = 6,
+    assetsToLoad = 8,
     numAssetsLoaded = 0;
 
 // assets vars
 var backgroundImg,
     backgroundSound,
     batSpritesheet,
+    gunShotSound,
+    gameOverSound,
+    tickSound,
+    batDieSound,
     batDeathSpritesheet,
     crosshair,
     batSize = [198,117], //Bat size on the spritesheet
@@ -120,6 +124,7 @@ function loadAssets() {
     crosshair.src = 'assets/media/crosshair.png';
     
     backgroundSound = new Audio();
+    backgroundSound.volume = 0.5;
     backgroundSound.onloadeddata = function() {
         assetLoaded();
     };
@@ -127,11 +132,26 @@ function loadAssets() {
     backgroundSound.load();
     
     gunShotSound = new Audio();
+    gunShotSound.volume = 0.3;
     gunShotSound.onloadeddata = function() {
         assetLoaded();
     };
     gunShotSound.src = 'assets/media/shot.wav';
     gunShotSound.load();
+    
+    batDieSound = new Audio();
+    batDieSound.onloadeddata = function() {
+        assetLoaded();
+    };
+    batDieSound.src = 'assets/media/die.wav';
+    batDieSound.load();
+
+    gameOverSound = new Audio();
+    gameOverSound.onloadeddata = function() {
+        assetLoaded();
+    };
+    gameOverSound.src = 'assets/media/gameOver.wav';
+    gameOverSound.load();
 }
 
 function assetLoaded(){
@@ -385,6 +405,9 @@ function checkCollisions() {
 	    
 	    if (hit && enemies[i].once == false) {
 		enemies[i].kill();
+		if (isSoundOn) {
+		    batDieSound.play();
+		};
 		score += 100;
 		batsKilled++;
 		batSpeed[0] *= 1.06;
@@ -404,6 +427,9 @@ function checkCollisions() {
     if (timePassed > 60 || score < 0) {
 	isPlaying = false;
 	$('#btnstopgame').hide();
+	if (isSoundOn) {
+	    setTimeout(function(){gameOverSound.play()}, 300);
+	};
     };
 
 }
