@@ -378,6 +378,9 @@ function fireGunTouch (event) {
 	}else{
 	    isSoundOn = true;
 	    backgroundSound.play();
+	    gameOverSound.play();
+	    gameOverSound.pause();
+	    gameOverSound.currentTime = 0;
 	};
     };
     if (isSoundOn && isPlaying) {
